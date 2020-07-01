@@ -11,5 +11,14 @@
     <main>
         <h1>Rendering with React</h1>
     </main>
+    <div id="root"></div>
 </body>
+<script>
+    const button = React.createElement(
+        'button', 
+        {type: 'button'}, 
+        'Save'
+    );
+    ReactDOM.render(button, document.getElementById('root'));
+</script>
 </html>
