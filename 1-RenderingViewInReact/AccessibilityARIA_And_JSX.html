@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AccessibilityARIA_And_JSX</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <label for="testInput">This is a test input</label>
+        <input aria-label="This is a test input" type="text" name="myInput" id="testInput" maxlength="10" class="input-style" readonly>
+        <div id="root"></div>
+
+        <!--
+            <input id="jsxInput" 
+                aria-label="This is a test input"
+                maxLength="10" 
+                readOnly 
+                className="input-style">
+        -->
+    </body>
+</html>
+
+<script type="text/babel">
+    const input = (
+        <React.Fragment>
+            <label htmlFor="jsxInput">This is a best test Input</label>
+        </React.Fragment>
+    );
+    ReactDOM.render(input, document.getElementById('root'));
+</script>
