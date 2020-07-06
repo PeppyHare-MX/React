@@ -1,5 +1,6 @@
 import React from 'react';
+import Counter from './Counter';
 
-const App = () => <p>This is our app.</p>
+const App = () => <Counter />
 
 export default App; 
