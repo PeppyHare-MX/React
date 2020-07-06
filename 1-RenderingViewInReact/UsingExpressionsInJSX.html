@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UsingExpressionsInJSX</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div id="error"></div>
+    </body>
+</html>
+
+<script type="text/babel">
+    const getFormattedText = string => `The count is: ${string}`;
+
+    let count = 0;
+
+    const interval = setInterval(() => {
+        const root = (
+            <React.Fragment>
+                <p>{getFormattedText(count)}</p>
+            </React.Fragment>
+        );
+        ReactDOM.render(root, document.getElementById('root'));
+
+        if (count === 100) {
+            clearInterval(interval);
+        } 
+        else {
+            count++;
+        }
+    }, 30);
+
+    const isError = true;
+
+    const errorContainer = (
+        <div className={isError ? 'error' : 'standard'}>
+            {isError ? (
+                <p>Panic! Something went wrong!</p>
+            ) : (
+                <p>Stop panicking!</p>
+            )}
+        </div>
+    );
+    ReactDOM.render(errorContainer, document.getElementById('error'));
+
+</script>
