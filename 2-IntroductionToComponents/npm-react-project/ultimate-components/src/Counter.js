@@ -1,19 +1,30 @@
 import React, {Fragment, useState} from 'react';
 
+const CounterView = ({counterValue, onIncrement}) => {
+
+    return (
+        <Fragment>
+            <p>{counterValue}</p>
+            <button type="button" onClick={onIncrement}>Increment</button>
+        </Fragment>
+    );
+}
+
+
 const Counter = () => {
 
     const [counter, setcounter] = useState(0);
 
-    const onClickHandler = () => {
+    const onIncrementHandler = () => {
         setcounter(counter+1);
         console.log('Button was pressed');
     }
 
     return (
-        <Fragment>
-            <p>{counter}</p>
-            <button type="button" onClick={onClickHandler}>Increment</button>
-        </Fragment>
+        <CounterView 
+            counterValue = {counter}
+            onIncrement = {onIncrementHandler}
+        />
     );
 }
 
