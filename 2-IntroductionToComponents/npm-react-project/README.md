@@ -29,7 +29,7 @@ index.js
 create-react-app ultimate-components --use-npm
 ```
 
-Output
+###### Output
 
 ```shell
 Inside that directory, you can run several commands:
@@ -59,9 +59,23 @@ Happy hacking!
 
 ---
 
-###### Run React application
+###### Run
 
 ```shell
 npm run start
+```
+
+###### Output
+
+```shell
+Compiled successfully!
+
+You can now view ultimate-components in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.30.248.103:3000      
+
+Note that the development build is not optimized.   
+To create a production build, use npm run build.    
 ```
 
