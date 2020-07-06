@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TheChildrenProp</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>
+
+<script type="text/babel">
+
+    //React Component
+    const Paragrapgh = ({text}) => <p>{text}</p>;
+    
+    const Section = ({headingText , children}) => (
+        <section>
+            <h1>{headingText}</h1>
+            {children}
+        </section>
+    );
+
+    const SectionBlock = () => (
+        <Section headingText="My first blof Post">
+            <Paragrapgh text="My first post text" />
+            <Paragrapgh text="My second post text" />
+        </Section>
+    );
+
+    ReactDOM.render(<SectionBlock />, document.getElementById('root'));
+
+</script>
