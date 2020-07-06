@@ -1,15 +1,5 @@
 import React, {Fragment, useState} from 'react';
-
-const CounterView = ({counterValue, onIncrement}) => {
-
-    return (
-        <Fragment>
-            <p>{counterValue}</p>
-            <button type="button" onClick={onIncrement}>Increment</button>
-        </Fragment>
-    );
-}
-
+import InteractiveView from './InteractiveView';
 
 const Counter = () => {
 
@@ -21,9 +11,10 @@ const Counter = () => {
     }
 
     return (
-        <CounterView 
+        <InteractiveView 
             counterValue = {counter}
             onIncrement = {onIncrementHandler}
+            actionText = "Increment"
         />
     );
 }
