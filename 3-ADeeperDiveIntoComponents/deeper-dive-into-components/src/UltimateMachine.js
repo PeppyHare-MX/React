@@ -32,6 +32,7 @@ const UltimateMachine = () => {
         <section>
             <h1>The Ultimate Machine</h1>
             {getMessage()}
+            {isOn ? <OnMessage /> : <OffMessage />}
             {<OnOff isOn={isOn} />}
             <button type="button" onClick={onClickHandler} aria-pressed={isOn}>
                 On/Off
